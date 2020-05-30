@@ -2,6 +2,7 @@
 
 import simple_draw as sd
 
+
 # Запросить у пользователя желаемую фигуру посредством выбора из существующих
 #   вывести список всех фигур с номерами и ждать ввода номера желаемой фигуры.
 # и нарисовать эту фигуру в центре экрана
@@ -57,8 +58,7 @@ while True:
     user_color = input("Enter a number for a shapes > ")
     try:
         user_input = int(user_color)
-
-    except:
+    except ValueError:
         print("Invalid input, must be a number")
 
     if user_input and 0 <= user_input <= 3:
@@ -68,7 +68,6 @@ while True:
             print("Invalid input, must be a number between 0 - 3")
         continue
 
-
 if user_input == 0:
     draw_triangle_v2(start_point=point_middle, length=110)
 elif user_input == 1:
@@ -77,9 +76,5 @@ elif user_input == 2:
     draw_pentagon_v2(start_point=point_middle, length=110)
 elif user_input == 3:
     draw_hexagon_v2(start_point=point_middle, length=110)
-
-
-
-
 
 sd.pause()

@@ -86,7 +86,7 @@ while True:
     try:
         user_input = int(user_color)
 
-    except:
+    except ValueError:
         print("Invalid input, must be a number")
 
     if user_input and 0 <= user_input <= 6:
